@@ -27,9 +27,14 @@ X= [X1;X2] % concaténation des VA X1 et
 X2[h,xout]=hist(X,50)  % calcul de l’histogramme de X
 bar(xout,h/trapz(xout,h));
 % affichage de l’histogramme de X
-mu_emp= % moyenne empirique
-sigma_emp= % écart type empirique
-mu_th= mean(X);% moyenne théorique
-sigma_th= sqrt(std(X));% écart type théorique
+mu_emp= mean(X) % moyenne empirique
+sigma_emp= sqrt(std(X))% écart type empirique
+mu_th= 2;% moyenne théorique
+sigma_th= sqrt(2/3);% écart type théorique
 fprintf('Moyenne empirique : %f,\t Moyenne théorique : %f\n',mu_emp,mu_emp);
 fprintf('Ecart type empirique : %f,\t Ecart type théorique : %f\n',sigma_emp,sigma_th);
+
+f=(.5*triangle((xout-2)/2));
+plot(xout,f)
+legend('empirique','théorique');
+title('loi de X sur [0,4]');
