@@ -1,0 +1,13 @@
+clear variables;
+close all;
+clc;
+n=50000;
+X = LoiUniforme(0,1,n);
+Y = LoiUniforme(0,1,n);
+
+
+X=rand(n,1);
+Y=rand(n,1);
+
+X=-log(1-X):la;
+Y=-log(1-Y)/2;
